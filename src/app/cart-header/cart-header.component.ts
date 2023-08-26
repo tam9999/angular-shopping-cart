@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart-header.component.css']
 })
 export class CartHeaderComponent {
-
+numberItems = 4;
 }
