@@ -1,16 +1,16 @@
 <div class="summary">
   <ul>
     <li>
-      Subtotal <span>{{ subTotal | currency }}</span>
+      Subtotal <span>{{ subTotal | currency : 'VND': true : '1.0-0' : 'vi-VN'}}</span>
     </li>
     <li *ngIf="discount > 0">
-      Discount <span>{{ discount | currency }}</span>
+      Discount <span>{{ discount | currency : 'VND': true : '1.0-0' : 'vi-VN' }}</span>
     </li>
     <li>
-      Tax <span>{{ tax | currency }}</span>
+      Tax <span>{{ tax | currency : 'VND': true : '1.0-0' : 'vi-VN' }}</span>
     </li>
     <li class="total">
-      Total <span>{{ subTotal - discount + tax | currency }}</span>
+      Total <span>{{ subTotal - discount + tax | currency : 'VND': true : '1.0-0' : 'vi-VN' }}</span>
     </li>
   </ul>
 </div>

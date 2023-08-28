@@ -13,7 +13,7 @@ export class AppComponent {
       name: 'Iphone 15',
       description: 'Description for product iphone 15',
       thumbnail: '/assets/iphone.jpeg',
-      price: 5.00,
+      price: 23000000,
       quantity: 2,
     },
     {
@@ -21,7 +21,7 @@ export class AppComponent {
       name: 'Iphone 14',
       description: 'Description for product iphone 14',
       thumbnail: '/assets/iphones.jpeg',
-      price: 10.00,
+      price: 15000000,
       quantity: 1,
     },
     {
@@ -29,7 +29,7 @@ export class AppComponent {
       name: 'Iphone 14 vs 15',
       description: 'Description for product iphone 14',
       thumbnail: '/assets/iphones.jpeg',
-      price: 9.99,
+      price: 17500000,
       quantity: 2,
     },
   ];

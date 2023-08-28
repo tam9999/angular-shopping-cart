@@ -7,7 +7,10 @@ import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PromoCodeComponent } from './promo-code/promo-code.component';
 import { FormsModule } from '@angular/forms'; 
-import { ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeVi from '@angular/common/locales/vi';
+
+registerLocaleData(localeVi, 'vi-VN');
 
 @NgModule({
   declarations: [
@@ -20,7 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
