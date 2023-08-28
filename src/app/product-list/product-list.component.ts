@@ -1,32 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '../product.model';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-products = [
-  {
-    name: 'Iphone 15',
-    description: 'Description for product iphone 15',
-    thumbnail: '/assets/iphone.jpeg',
-    price: 5.99,
-    quantity: 1
-  },
-  {
-    name: 'Iphone 14',
-    description: 'Description for product iphone 14',
-    thumbnail: '/assets/iphones.jpeg',
-    price: 9.99,
-    quantity: 1
-  },
-  {
-    name: 'Iphone 14 vs 15',
-    description: 'Description for product iphone 14',
-    thumbnail: '/assets/iphones.jpeg',
-    price: 9.99,
-    quantity: 2
+  @Input() products: Product[];
+  @Output() onRemoveProduct = new EventEmitter();
+  @Output() onUpdateQuantity = new EventEmitter();
+
+  removeProduct(productId: number): void {
+    this.onRemoveProduct.emit(productId);
   }
-]
+
+  inputQuantity(id: number, inputElement: HTMLInputElement) {
+    const value = inputElement.value;
+    const intValue = parseInt(value);
+
+    if (intValue < 1) {
+      inputElement.value = -intValue + '';
+    } else if (value.length > 2) {
+      inputElement.value = value.slice(0, 2);
+    }
+
+    this.onUpdateQuantity.emit({ id, quantity: parseInt(inputElement.value) || '' });
+  }
 }
